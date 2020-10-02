@@ -1,0 +1,73 @@
+#
+# MIT License
+#
+# Copyright (c) 2020 Reto Achermann, Gerd Zellweger
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# SPDX-License-Identifier: MIT
+#
+
+###################################################################################################
+# Package Information
+###################################################################################################
+
+
+[package]
+name = "aarch64"
+authors = [
+  "Reto Achermann <achreto@gmail.com>"
+]
+
+# version information
+version = "0.0.1"
+edition = "2018"
+
+# description and keywords
+description = "An AArch64 hardware support library"
+keywords = ["Arm", "aarch64", "registers"]
+
+# readme and license information
+readme = "README.md"
+license = "MIT"
+license-file = "LICENSE"
+
+# repository and homepage settings
+homepage = "https://github.com/achreto/rust-aarch64"
+repository = "https://github.com/achreto/rust-aarch64"
+
+
+###################################################################################################
+# Dependencies
+###################################################################################################
+
+[dependencies]
+
+# Generic Internal Dependencies
+# -------------------------------------------------------------------------------------------------
+
+# None so far
+
+
+###################################################################################################
+# Features
+###################################################################################################
+
+[features]
+# None so far
