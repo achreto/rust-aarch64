@@ -24,34 +24,70 @@
  * SPDX-License-Identifier: MIT
  */
 
-#![no_std]
-#![feature(llvm_asm, core_intrinsics)]
+
+/***************************************************************************
+ * ***********************
+ *
+ * !!!! WARNING: THIS FILE IS AUTO GENERATED. ANY CHANGES MAY BE OVERWRITTEN
+ * !!!!
+ *
+ * Generated on: 2020-10-05T16:30:11.740556
+ * Version: Armv8.7-A-2020-09
+ * Source: https://developer.arm.com/-/media/developer/products/architecture/armv8-a-architecture/2020-09/SysReg_xml_v87A-2020-09.tar.gz
+ *
+ * !!!! WARNING: THIS FILE IS AUTO GENERATED. ANY CHANGES MAY BE OVERWRITTEN
+ * !!!!
+ *
+ **************************************************************************
+ * ********************* */
 
 
 /*
  * ================================================================================================
- * Include generated modules
+ * Control Flow Prediction Restriction by Context
  * ================================================================================================
  */
 
-// AArch64 system registers
-pub mod registers;
 
-// AArch64 system registers
-pub mod instructions;
+
+/// Control Flow Prediction Restriction by Context
+#[inline(always)]
+pub fn cfp_rctx(arg: u64) {
+    unsafe {
+        llvm_asm!("cfp rctx, $0" : : "r"(arg));
+    }
+}
 
 
 /*
  * ================================================================================================
- * Testing
+ * Cache Prefetch Prediction Restriction by Context
  * ================================================================================================
  */
 
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+
+/// Cache Prefetch Prediction Restriction by Context
+#[inline(always)]
+pub fn cpp_rctx(arg: u64) {
+    unsafe {
+        llvm_asm!("cpp rctx, $0" : : "r"(arg));
+    }
+}
+
+
+/*
+ * ================================================================================================
+ * Data Value Prediction Restriction by Context
+ * ================================================================================================
+ */
+
+
+
+/// Data Value Prediction Restriction by Context
+#[inline(always)]
+pub fn dvp_rctx(arg: u64) {
+    unsafe {
+        llvm_asm!("dvp rctx, $0" : : "r"(arg));
     }
 }

@@ -24,34 +24,34 @@
  * SPDX-License-Identifier: MIT
  */
 
-#![no_std]
-#![feature(llvm_asm, core_intrinsics)]
+
+/***************************************************************************
+ * ***********************
+ *
+ * !!!! WARNING: THIS FILE IS AUTO GENERATED. ANY CHANGES MAY BE OVERWRITTEN
+ * !!!!
+ *
+ * Generated on: 2020-10-05T16:30:11.739700
+ * Version: Armv8.7-A-2020-09
+ * Source: https://developer.arm.com/-/media/developer/products/architecture/armv8-a-architecture/2020-09/SysReg_xml_v87A-2020-09.tar.gz
+ *
+ * !!!! WARNING: THIS FILE IS AUTO GENERATED. ANY CHANGES MAY BE OVERWRITTEN
+ * !!!!
+ *
+ **************************************************************************
+ * ********************* */
+
+// Address translation instructions
+pub mod address_translation;
+
+// Cache maintenance instructions
+pub mod cache_maintenance;
+
+// Predictor maintenance instructions
+pub mod predictor_maintenance;
+
+// TLB maintenance instructions
+pub mod tlb_maintenance;
 
 
-/*
- * ================================================================================================
- * Include generated modules
- * ================================================================================================
- */
-
-// AArch64 system registers
-pub mod registers;
-
-// AArch64 system registers
-pub mod instructions;
-
-
-/*
- * ================================================================================================
- * Testing
- * ================================================================================================
- */
-
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+// end of file
