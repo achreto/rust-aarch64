@@ -52,16 +52,21 @@ def parse_field_node(field_node, length) :
         logerr("    - expected a field node, but was None!")
         return None
 
+    field_msb = int(field_node.find('field_msb').text)
+    field_lsb =  int(field_node.find('field_lsb').text)
+    field_size = field_msb - field_lsb + 1
+
     field_name_node = field_node.find('field_name')
     field_id = filterident(field_node.attrib['id'])
+    if field_id == "none_{}_0".format(length - 1) :
+        field_id = 'val'
+
     if field_name_node is None :
         field_name = field_id
     else :
         field_name = field_name_node.text
 
-    field_msb = int(field_node.find('field_msb').text)
-    field_lsb =  int(field_node.find('field_lsb').text)
-    field_size = field_msb - field_lsb + 1
+
 
     is_reserved = False
     desc = field_node.find('field_description/para')
@@ -140,7 +145,7 @@ def parse_reg_fieldsets_node(reg_fieldsets_node, is_register) :
         logwarn("    - expected fields_nodes to have exactly one element, had {}".format(len(fields_nodes) ))
 
     fields_node = fields_nodes[0]
-    length = fields_node.attrib["length"]
+    length = int(fields_node.attrib["length"])
 
     fields = []
     for field_node in fields_node.findall("field") :
